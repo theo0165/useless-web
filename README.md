@@ -35,3 +35,30 @@ Tested by the following people:
         -   Click - change shape
         -   Space - compare to perfekt form
         -   Focus - Stop game if mouse is out of play area
+-   Something with youtube embedded player.
+    -   Videos of weather outside, white noise.
+        -   Rain, thunder, birds & more.
+    -   Like drive and listen.
+    -   Events
+        -   Click to show/hide menu.
+        -   Click to change video.
+    -   Problem
+        -   Can't autoplay with sound. External sound?
+            -   Muted video, external sound?
+            -   Only image and sound?
+    -   Is it useless?
+    -   https://github.com/iambibhas/background-noise
+-   Weather app that gives forecast at other side of the world
+
+    -   Openweathermap
+    -   PHP api on one.com.
+    -   Antipode - other side of the world
+
+        -   ```python
+            AntiLatitide = Latitude *-1
+
+            if Longitude > 0:
+                AntiLongitude = (180 - Longitude)*-1
+            elif Longitude < 0:
+                AntiLongitude = (-180 - Longitude)*-1
+            ```
