@@ -62,3 +62,11 @@ Tested by the following people:
             elif Longitude < 0:
                 AntiLongitude = (-180 - Longitude)*-1
             ```
+
+    -   Events
+        -   Keydown: space, change to real weather?
+        -   Click: open modal with embedded map with location?
+        -   Input to change city? Select city and get antipode?
+            -   Ajax search?
+        -   Hover over items, show real data?
+        -   Get random location?
