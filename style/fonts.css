@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Fira Mono';
+  src: url('/fonts/FiraMono/FiraMono-Regular.woff2') format('woff2'),
+    url('/fonts/FiraMono/FiraMono-Regular.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans/woff2/OpenSans-Regular.woff2') format('woff2'),
+    url('/fonts/OpenSans/woff/OpenSans-Regular.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans/woff2/OpenSans-Medium.woff2') format('woff2'),
+    url('/fonts/OpenSans/woff/OpenSans-Medium.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans/woff2/OpenSans-Bold.woff2') format('woff2'),
+    url('/fonts/OpenSans/woff/OpenSans-Bold.woff') format('woff');
+  font-weight: 700;
+}
