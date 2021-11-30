@@ -1,6 +1,6 @@
 footer {
   font-family: 'Fira Mono', 'Open Sans', sans-serif;
-  position: absolute;
+  position: fixed;
   text-align: center;
   transform: translate(-50%, 0);
   left: 50%;

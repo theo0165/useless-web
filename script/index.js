@@ -1,4 +1,14 @@
-let currentLocation = false;
+const current = {
+  wrapper: document.querySelector('section.weather'),
+  icon: document.querySelector('section.weather .icon'),
+  location: document.querySelector('section.weather .location'),
+  temp: document.querySelector('section.weather .current'),
+  highLow: document.querySelector('section.weather .high-low'),
+};
+
+const forecastWrapper = document.querySelector('.forecast');
+
+console.log(current);
 
 const getAntipode = (lat, lon) => {
   let antipodes = [];
@@ -15,6 +25,7 @@ const getAntipode = (lat, lon) => {
 };
 
 const getCoords = () => {
+  console.log('Asking for location permission');
   return new Promise((resolve, reject) =>
     navigator.permissions
       ? // Permission API is implemented
@@ -37,6 +48,7 @@ const getCoords = () => {
 
 getCoords()
   .then((coords) => {
+    console.log('permission');
     const antipode = getAntipode(coords.latitude, coords.longitude);
 
     console.log(
@@ -60,6 +72,7 @@ getCoords()
       });
   })
   .catch((error) => {
+    console.log(error);
     document.querySelector('main').innerHTML =
       '<h1>Location permission required.</h1>';
   });
