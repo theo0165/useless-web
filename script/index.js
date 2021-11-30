@@ -1,3 +1,5 @@
+let currentLocation = false;
+
 const getAntipoded = (lat, lon) => {
   let antipodes = [];
 
@@ -12,7 +14,20 @@ const getAntipoded = (lat, lon) => {
   return antipodes;
 };
 
-const antipodes = getAntipoded(57.83625478896444, 12.241045118362768);
+//TODO: Fix location...
+navigator.geolocation.getCurrentPosition((location) => {
+  currentLocation = [location.coords.latitude, location.coords.longitude];
+  console.log(
+    location,
+    'https://www.google.se/maps/@' +
+      location.coords.latitude.toString() +
+      ',' +
+      location.coords.longitude.toString() +
+      ',14z'
+  );
+});
+
+const antipodes = getAntipoded(currentLocation[0], currentLocation[1]);
 console.log(
   'https://www.google.se/maps/@' +
     antipodes[0].toString() +
@@ -28,4 +43,13 @@ fetch(
     antipodes[1]
 )
   .then((request) => request.json())
-  .then(console.log);
+  .then((data) => {
+    console.log(data);
+    console.log(
+      'https://www.google.se/maps/@' +
+        data.closest_city.lat +
+        ',' +
+        data.closest_city.lon +
+        ',14z'
+    );
+  });
