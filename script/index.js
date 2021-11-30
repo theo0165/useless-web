@@ -14,43 +14,30 @@ const getAntipode = (lat, lon) => {
   return antipodes;
 };
 
-//TODO: Fix location...
-/*
-const antipodes = getAntipoded(currentLocation[0], currentLocation[1]);
-console.log(
-  'antipode location',
-  'https://www.google.se/maps/@' +
-    antipodes[0].toString() +
-    ',' +
-    antipodes[1].toString() +
-    ',14z'
-);
+const getCoords = () => {
+  return new Promise((resolve, reject) =>
+    navigator.permissions
+      ? // Permission API is implemented
+        navigator.permissions
+          .query({
+            name: 'geolocation',
+          })
+          .then((permission) =>
+            // is geolocation granted?
+            permission.state === 'granted'
+              ? navigator.geolocation.getCurrentPosition((pos) =>
+                  resolve(pos.coords)
+                )
+              : reject(new Error('Permission not granted'))
+          )
+      : // Permission API was not implemented
+        reject(new Error('Permission API is not supported'))
+  );
+};
 
-fetch(
-  'https://theosandell.com/api/antipodeWeather/getWeather.php?lat=' +
-    antipodes[0] +
-    '&lon=' +
-    antipodes[1]
-)
-  .then((request) => request.json())
-  .then((data) => {
-    console.log(data);
-    console.log(
-      'closest city from server',
-      'https://www.google.se/maps/@' +
-        data.closest_city.lat +
-        ',' +
-        data.closest_city.lon +
-        ',14z'
-    );
-  });*/
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition((position) => {
-    const antipode = getAntipode(
-      position.coords.latitude,
-      position.coords.longitude
-    );
+getCoords()
+  .then((coords) => {
+    const antipode = getAntipode(coords.latitude, coords.longitude);
 
     console.log(
       'antipode location',
@@ -67,20 +54,12 @@ if (navigator.geolocation) {
         '&lon=' +
         antipode[1]
     )
-      .then((request) => request.json())
+      .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        console.log(
-          'closest city from server',
-          'https://www.google.se/maps/@' +
-            data.closest_city.lat +
-            ',' +
-            data.closest_city.lon +
-            ',14z'
-        );
       });
+  })
+  .catch((error) => {
+    document.querySelector('main').innerHTML =
+      '<h1>Location permission required.</h1>';
   });
-} else {
-  //Error
-  throw new Error('Could not get location');
-}
