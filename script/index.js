@@ -8,8 +8,6 @@ const current = {
 };
 const forecastsWrapper = document.querySelector('.forecast');
 
-console.log(icons);
-
 const getAntipode = (lat, lon) => {
   let antipodes = [];
 
@@ -116,6 +114,7 @@ getCoords()
           const highLowWrapper = document.createElement('div');
           const high = document.createElement('p');
           const low = document.createElement('p');
+          const seperator = document.createElement('p');
 
           const forecastDate = new Date(forecast.dt * 1000);
 
@@ -131,6 +130,7 @@ getCoords()
           weatherInfo.appendChild(date);
           weatherInfo.appendChild(highLowWrapper);
           highLowWrapper.appendChild(high);
+          highLowWrapper.appendChild(seperator);
           highLowWrapper.appendChild(low);
 
           forecastWrapper.appendChild(forecastIcon);
@@ -144,6 +144,7 @@ getCoords()
             ' ' +
             forecastDate.getFullYear();
           high.textContent = 'High: ' + Math.floor(forecast.temp.max) + '°C';
+          seperator.textContent = ' | ';
           low.textContent = 'Low: ' + Math.floor(forecast.temp.min) + '°C';
 
           forecastsWrapper.append(forecastWrapper);
