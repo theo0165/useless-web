@@ -77,7 +77,6 @@ const getCoords = () => {
 
 getCoords()
   .then((coords) => {
-    console.log('permission');
     const antipode = getAntipode(coords.latitude, coords.longitude);
 
     console.log(
