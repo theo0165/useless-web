@@ -28,3 +28,15 @@ main {
   align-items: center;
   flex-direction: column;
 }
+
+h1 {
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+.underline {
+  text-decoration: underline;
+}

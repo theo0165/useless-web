@@ -1,0 +1,26 @@
+.weather {
+  display: flex;
+  padding-top: 50px;
+}
+
+.weather .icon i {
+  font-size: 100px;
+  line-height: normal;
+}
+
+.weather .icon {
+  padding-right: 35px;
+}
+
+.location {
+  font-size: 36px;
+}
+
+.current-temp {
+  font-size: 24px;
+  padding-top: 16px;
+}
+
+.weather-text {
+  text-transform: capitalize;
+}

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/style/fonts.css" />
     <link rel="stylesheet" href="/style/index.css" />
     <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/weather.css" />
+    <link rel="stylesheet" href="/style/forecast.css" />
     <link
       rel="stylesheet"
       href="/lib/weathericons/css/weather-icons-wind.min.css"
@@ -17,7 +19,7 @@
   <body>
     <main>
       <h1>This weather seems strange 🤔</h1>
-      <h2>Almost like an antipode</h2>
+      <h2>Almost like an <span class="underline">antipode</span></h2>
       <section class="weather">
         <div class="icon"><i></i></div>
         <div class="weather-info">
@@ -26,7 +28,9 @@
           <div class="weather-text"></div>
         </div>
       </section>
-      <section class="forecast"></section>
+      <section class="forecast">
+        <h3>Forecast</h3>
+      </section>
     </main>
     <footer>
       <!-- TODO: Text breaking when making window smaller -->

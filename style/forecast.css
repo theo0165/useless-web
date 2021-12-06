@@ -1,0 +1,33 @@
+.forecast {
+  margin-top: 24px;
+}
+
+.single-forecast {
+  display: flex;
+  margin: 15px 0;
+}
+
+.forecast-high-low p {
+  display: inline-block;
+}
+
+.forecast-high-low p:nth-child(2) {
+  padding: 0 5px;
+}
+
+.forecast-high-low {
+  padding-top: 10px;
+}
+
+.forecast-icon i {
+  font-size: 45px;
+  line-height: normal;
+}
+
+.forecast-icon {
+  margin-right: 24px;
+}
+
+.forecast h3 {
+  font-weight: 300;
+}

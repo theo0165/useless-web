@@ -135,7 +135,7 @@ getCoords()
           forecastWrapper.appendChild(forecastIcon);
           forecastWrapper.appendChild(weatherInfo);
 
-          forecastIcon.classList = getWeatherIcon(forecast.weather[0].id);
+          forecastIconText.classList = getWeatherIcon(forecast.weather[0].id);
           date.textContent =
             forecastDate.getDate() +
             ' ' +
