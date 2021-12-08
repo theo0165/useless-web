@@ -1,10 +1,13 @@
 footer {
-  font-family: 'Fira Mono', 'Open Sans', sans-serif;
+  font-family: var(--font-footer);
   position: fixed;
   text-align: center;
   transform: translate(-50%, 0);
   left: 50%;
   bottom: 20px;
+  width: fit-content;
+  padding: 10px;
+  background: var(--footer-background);
 }
 
 footer a {

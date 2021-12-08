@@ -1,6 +1,10 @@
 :root {
   --background-color: #333;
   --text-color: #eee;
+  --footer-background: #2c2c2c;
+
+  --font: 'Open Sans', sans-serif;
+  --font-footer: 'Fira Mono', monospace;
 }
 
 * {
@@ -18,7 +22,7 @@ body {
 body {
   background: var(--background-color);
   color: var(--text-color);
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font);
 }
 
 main {
@@ -27,6 +31,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 60px;
 }
 
 h1 {
