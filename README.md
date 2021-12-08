@@ -65,8 +65,8 @@ Tested by the following people:
 
     -   Events
         -   Keydown: space, change to real weather?
-        -   Click: open modal with embedded map with location?
-        -   Input to change city? Select city and get antipode?
-            -   Ajax search?
+        -   Click: open modal with embedded map with location? - click
+        -   Input to change city? Select city and get antipode? - click/submit form?
+            -   Ajax search? - keyup
         -   Hover over items, show real data?
         -   Get random location?
