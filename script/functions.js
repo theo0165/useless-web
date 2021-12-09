@@ -1,3 +1,11 @@
+const current = {
+  wrapper: document.querySelector('section.weather'),
+  icon: document.querySelector('section.weather .icon i'),
+  location: document.querySelector('section.weather .location'),
+  temp: document.querySelector('section.weather .current-temp'),
+  weatherText: document.querySelector('section.weather .weather-text'),
+};
+
 const getAntipode = (lat, lon) => {
   let antipodes = [];
 
@@ -63,4 +71,24 @@ const getCoords = () => {
       : // Permission API was not implemented
         reject(new Error('Permission API is not supported'))
   );
+};
+
+const mobileWeatherToggle = (data) => {
+  if (document.body.classList.contains('real')) {
+    current.icon.classList = getWeatherIcon(data.fake.current.weather[0].id);
+    current.location.textContent =
+      data.closest_city.name +
+      ', ' +
+      regionNames.of(data.closest_city.countryCode);
+    current.temp.textContent = Math.floor(data.fake.current.temp) + '°C';
+    current.weatherText.textContent = data.fake.current.weather[0].description;
+    document.body.classList.remove('real');
+  } else {
+    current.icon.classList = getWeatherIcon(data.real.current.weather[0].id);
+    current.location.textContent =
+      data.real_city.name + ', ' + regionNames.of(data.real_city.countryCode);
+    current.temp.textContent = Math.floor(data.real.current.temp) + '°C';
+    current.weatherText.textContent = data.real.current.weather[0].description;
+    document.body.classList.add('real');
+  }
 };

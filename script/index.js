@@ -1,11 +1,4 @@
 let regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
-const current = {
-  wrapper: document.querySelector('section.weather'),
-  icon: document.querySelector('section.weather .icon i'),
-  location: document.querySelector('section.weather .location'),
-  temp: document.querySelector('section.weather .current-temp'),
-  weatherText: document.querySelector('section.weather .weather-text'),
-};
 const forecastsWrapper = document.querySelector('.forecast');
 
 const updateWeather = (data, city) => {
@@ -100,6 +93,12 @@ getCoords()
         console.log(data);
         updateWeather(data.fake, data.closest_city);
         setEvents(data.real, data.real_city, data.fake, data.closest_city);
+
+        document
+          .querySelector('#location-switch')
+          .addEventListener('click', () => {
+            mobileWeatherToggle(data);
+          });
       });
   })
   .catch((error) => {

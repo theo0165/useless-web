@@ -1,0 +1,32 @@
+.switch-mobile {
+  width: 100%;
+  text-align: center;
+  padding-top: 24px;
+}
+
+#location-switch {
+  padding: 7px 10px;
+  background: white;
+  font-size: 16px;
+  border: 1px solid black;
+}
+
+@media screen and (min-width: 500px) {
+  body .weather .icon i {
+    font-size: 100px;
+  }
+
+  body .location {
+    font-size: 36px;
+  }
+
+  body .current-temp {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body .switch-mobile {
+    display: none;
+  }
+}
