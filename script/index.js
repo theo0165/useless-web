@@ -75,13 +75,11 @@ const getCoords = () => {
   );
 };
 
-const updateWeather = (data) => {
+const updateWeather = (data, city) => {
   current.temp.textContent = Math.floor(data.current.temp) + '°C';
   current.weatherText.textContent = data.current.weather[0].description;
   current.location.textContent =
-    data.closest_city.name +
-    ', ' +
-    regionNames.of(data.closest_city.countryCode);
+    city.name + ', ' + regionNames.of(city.countryCode);
   current.icon.classList = getWeatherIcon(data.current.weather[0].id);
 
   data.daily.forEach((forecast) => {
@@ -143,22 +141,31 @@ getCoords()
         ',14z'
     );
 
-    fetch(
-      'https://www.metaweather.com/api/location/search/?lattlong=' +
-        antipode[0].toString() +
-        ',' +
-        antipode[1].toString()
-    ).then((data) => console.log);
+    console.log(
+      'https://theosandell.com/api/antipodeWeather/getWeather.php?fakeLat=' +
+        antipode[0] +
+        '&fakeLon=' +
+        antipode[1] +
+        '&realLat=' +
+        coords.latitude +
+        '&realLon=' +
+        coords.longitude
+    );
 
     fetch(
-      'https://theosandell.com/api/antipodeWeather/getWeather.php?lat=' +
+      'https://theosandell.com/api/antipodeWeather/getWeather.php?fakeLat=' +
         antipode[0] +
-        '&lon=' +
-        antipode[1]
+        '&fakeLon=' +
+        antipode[1] +
+        '&realLat=' +
+        coords.latitude +
+        '&realLon=' +
+        coords.longitude
     )
       .then((response) => response.json())
       .then((data) => {
-        updateWeather(data);
+        console.log(data);
+        updateWeather(data.fake, data.closest_city);
       });
   })
   .catch((error) => {
