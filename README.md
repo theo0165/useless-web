@@ -64,9 +64,12 @@ Tested by the following people:
             ```
 
     -   Events
+
         -   Keydown: space, change to real weather?
         -   Click: open modal with embedded map with location? - click
         -   Input to change city? Select city and get antipode? - click/submit form?
-            -   Ajax search? - keyup
+            -   Ajax search? - input change
         -   Hover over items, show real data?
         -   Get random location?
+
+    -   Change to metaweather.com api? (No api key)
