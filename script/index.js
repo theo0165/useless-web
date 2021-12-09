@@ -144,6 +144,13 @@ getCoords()
     );
 
     fetch(
+      'https://www.metaweather.com/api/location/search/?lattlong=' +
+        antipode[0].toString() +
+        ',' +
+        antipode[1].toString()
+    ).then((data) => console.log);
+
+    fetch(
       'https://theosandell.com/api/antipodeWeather/getWeather.php?lat=' +
         antipode[0] +
         '&lon=' +
