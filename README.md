@@ -24,14 +24,14 @@ Refresh the website for the changes to take effect.
 # Code Review
 
 Done by [Linnéa Eriksson](https://github.com/LinneaEriksson)
-1. index.js:21-29 - You could use createElement instead of innerHTML. 
-2. Overall  - Would be nice with more comments to get a greater understanding of the code. 
+1.  index.js:21-29 - You could use createElement instead of innerHTML. 
+2.  Overall  - Would be nice with more comments to get a greater understanding of the code. 
 
-  Since I couldn’t find anything else to improve in your code I have written three comments about what you have done good! :) 
+Since I couldn’t find anything else to improve in your code I have written three comments about what you have done good! :)
 
-3. Overall - You have a very good folder structure in your project.
-4. Overall - You have good names on your elements. Even though I could not open the code in my browser (due to settings), I understand what is what.
-5. index.html: 29 - It’s nice that you tell the user what they can do on the website, for example “Hover over elements for the real data…”. 
+3.  Overall - You have a very good folder structure in your project.
+4.  Overall - You have good names on your elements. Even though I could not open the code in my browser (due to settings), I understand what is what.
+5.  index.html: 29 - It’s nice that you tell the user what they can do on the website, for example “Hover over elements for the real data…”.
 
 Cool project, well done! 🙂
 
