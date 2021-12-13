@@ -62,7 +62,6 @@ const getWeatherIcon = (code) => {
 };
 
 const getCoords = () => {
-  console.log('Asking for location permission');
   return new Promise((resolve, reject) =>
     navigator.permissions
       ? // Permission API is implemented
