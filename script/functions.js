@@ -1,6 +1,13 @@
 let regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
 const forecastsWrapper = document.querySelector('.forecast');
 
+//Background colors depending on current temperature
+const bgColors = {
+  blue: '#71A6D2', // BLUE < 10 degrees
+  orange: '#e67e22', // ORANGE < 25 & > 10
+  red: '#CE2029', // RED > 25 degrees
+};
+
 const current = {
   wrapper: document.querySelector('section.weather'),
   icon: document.querySelector('section.weather .icon i'),
@@ -97,6 +104,14 @@ const mobileWeatherToggle = (data) => {
 };
 
 const updateWeather = (data, city) => {
+  if (Math.floor(data.current.temp) <= 10) {
+    document.body.style.background = bgColors.blue;
+  } else if (Math.floor(data.current.temp) >= 25) {
+    document.body.style.background = bgColors.red;
+  } else {
+    document.body.style.background = bgColors.orange;
+  }
+
   current.temp.textContent = Math.floor(data.current.temp) + '°C';
   current.weatherText.textContent = data.current.weather[0].description;
   current.location.textContent =

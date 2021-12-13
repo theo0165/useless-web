@@ -32,4 +32,40 @@ const setEvents = (data, realCity, fake, fakeCity) => {
   current.weatherText.addEventListener('mouseout', () => {
     current.weatherText.textContent = fake.current.weather[0].description;
   });
+
+  const forecasts = document.querySelectorAll('.single-forecast');
+
+  forecasts.forEach((forecast, i) => {
+    const forecastIcon = forecast.querySelector('.forecast-icon i');
+    const forecastHigh = forecast.querySelector('.forecast-high');
+    const forecastLow = forecast.querySelector('.forecast-low');
+
+    forecastIcon.addEventListener('mouseenter', () => {
+      forecastIcon.classList = getWeatherIcon(data.daily[i].weather[0].id);
+    });
+
+    forecastIcon.addEventListener('mouseout', () => {
+      forecastIcon.classList = getWeatherIcon(fake.daily[i].weather[0].id);
+    });
+
+    forecastHigh.addEventListener('mouseenter', () => {
+      forecastHigh.textContent =
+        'High: ' + Math.floor(data.daily[i].temp.max).toString() + '°C';
+    });
+
+    forecastHigh.addEventListener('mouseout', () => {
+      forecastHigh.textContent =
+        'High: ' + Math.floor(fake.daily[i].temp.max).toString() + '°C';
+    });
+
+    forecastLow.addEventListener('mouseenter', () => {
+      forecastLow.textContent =
+        'Low: ' + Math.floor(data.daily[i].temp.min).toString() + '°C';
+    });
+
+    forecastLow.addEventListener('mouseout', () => {
+      forecastLow.textContent =
+        'Low: ' + Math.floor(fake.daily[i].temp.min).toString() + '°C';
+    });
+  });
 };
