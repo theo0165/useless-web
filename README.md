@@ -24,8 +24,9 @@ Refresh the website for the changes to take effect.
 # Code Review
 
 Done by [Linnéa Eriksson](https://github.com/LinneaEriksson)
-1.  index.js:21-29 - You could use createElement instead of innerHTML. 
-2.  Overall  - Would be nice with more comments to get a greater understanding of the code. 
+
+1.  index.js:21-29 - You could use createElement instead of innerHTML.
+2.  Overall - Would be nice with more comments to get a greater understanding of the code.
 
 Since I couldn’t find anything else to improve in your code I have written three comments about what you have done good! :)
 
