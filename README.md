@@ -73,3 +73,5 @@ Tested by the following people:
         -   Get random location?
 
     -   Change to metaweather.com api? (No api key)
+
+Change background depending on current temp, blue, orange, red?
